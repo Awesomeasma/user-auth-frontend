@@ -5,6 +5,7 @@ const UserList = ({ token }) => {
   const [users, setUsers] = useState([]);
   const [message, setMessage] = useState('');
 
+  useEffect(() => {
   const fetchUsers = async () => {
     try {
       const res = await axios.get('https://user-auth-backend-qstb.onrender.com/users', {
@@ -16,9 +17,9 @@ const UserList = ({ token }) => {
     }
   };
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+  fetchUsers();
+}, [token]);
+
 
   const deleteUser = async id => {
     try {

@@ -11,7 +11,7 @@ const Signup = ({ setToken, setUser }) => {
     e.preventDefault();
     setError('');
     try {
-      const res = await axios.post('https://user-auth-backend-qstb.onrender.com/signup', { name, email, password });
+      await axios.post('https://user-auth-backend-qstb.onrender.com/signup', { name, email, password });
       alert('Signup successful! Please login.');
       setName('');
       setEmail('');
